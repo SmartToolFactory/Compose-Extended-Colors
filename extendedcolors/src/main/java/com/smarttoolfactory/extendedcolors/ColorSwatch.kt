@@ -9,6 +9,76 @@ val A700 = "A700"
 
 object ColorSwatch {
 
+    val HeaderColors by lazy {
+        listOf(
+            Color(0xffF44336),
+            Color(0xffE91E63),
+            Color(0xff9C27B0),
+            Color(0xff673AB7),
+            Color(0xff3F51B5),
+            Color(0xff2196F3),
+            Color(0xff03A9F4),
+            Color(0xff00BCD4),
+            Color(0xff00ACC1),
+            Color(0xff4CAF50),
+            Color(0xff8BC34A),
+            Color(0xffCDDC39),
+            Color(0xffFFEB3B),
+            Color(0xffFFC107),
+            Color(0xffFF9800),
+            Color(0xffFF5722),
+            Color(0xff795548),
+            Color(0xff9E9E9E),
+            Color(0xff607D8B)
+        )
+    }
+
+    val primaryColorSwatches by lazy {
+        listOf(
+            red,
+            pink,
+            purple,
+            deepPurple,
+            indigo,
+            blue,
+            lightBlue,
+            cyan,
+            teal,
+            green,
+            lightGreen,
+            lime,
+            yellow,
+            amber,
+            orange,
+            deepOrange,
+            brown,
+            grey,
+            blueGrey
+        )
+    }
+
+
+    val accentColorSwatches by lazy {
+        listOf(
+            redAccent,
+            pinkAccent,
+            purpleAccent,
+            deepPurpleAccent,
+            indigoAccent,
+            blueAccent,
+            lightBlueAccent,
+            cyanAccent,
+            tealAccent,
+            greenAccent,
+            lightGreenAccent,
+            limeAccent,
+            yellowAccent,
+            amberAccent,
+            orangeAccent,
+            deepOrangeAccent,
+        )
+    }
+
     val red by lazy {
         linkedMapOf(
             50 to Color(0xffFFEBEE),
@@ -131,25 +201,25 @@ object ColorSwatch {
 
     val blue by lazy {
         linkedMapOf(
-            50 to Color(0xffE8EAF6),
-            100 to Color(0xffC5CAE9),
-            200 to Color(0xff9FA8DA),
-            300 to Color(0xff7986CB),
+            50 to Color(0xffE3F2FD),
+            100 to Color(0xffBBDEFB),
+            200 to Color(0xff90CAF9),
+            300 to Color(0xff64B5F6),
             400 to Color(0xff42A5F5),
-            500 to Color(0xff3949AB),
-            600 to Color(0xff3949AB),
-            700 to Color(0xff303F9F),
-            800 to Color(0xff283593),
-            900 to Color(0xff1A237E)
+            500 to Color(0xff2196F3),
+            600 to Color(0xff1E88E5),
+            700 to Color(0xff1976D2),
+            800 to Color(0xff1565C0),
+            900 to Color(0xff0D47A1)
         )
     }
 
     val blueAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xff8C9EFF),
-            A200 to Color(0xff536DFE),
-            A400 to Color(0xff3D5AFE),
-            A700 to Color(0xff304FFE)
+            A100 to Color(0xff82B1FF),
+            A200 to Color(0xff448AFF),
+            A400 to Color(0xff1565C0),
+            A700 to Color(0xff2962FF)
         )
     }
     val lightBlue by lazy {
@@ -234,7 +304,7 @@ object ColorSwatch {
             500 to Color(0xff4CAF50),
             600 to Color(0xff43A047),
             700 to Color(0xff388E3C),
-            800 to Color(0xff558B2F),
+            800 to Color(0xff2E7D32),
             900 to Color(0xff1B5E20)
         )
     }
