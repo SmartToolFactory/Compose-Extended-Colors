@@ -21,6 +21,8 @@ import com.smarttoolfactory.composecolorsextended.demo.GradientAngleDemo
 import com.smarttoolfactory.composecolorsextended.demo.MD2ColorSelectionDemo
 import com.smarttoolfactory.composecolorsextended.demo.MD3ColorShadeSelectionDemo
 import com.smarttoolfactory.composecolorsextended.ui.theme.ComposeColorsExtendedTheme
+import com.smarttoolfactory.extendedcolors.ColorSwatch
+import com.smarttoolfactory.extendedcolors.util.colorToHSL
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
@@ -50,12 +52,12 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun HomeContent() {
+    val systemUiController = rememberSystemUiController()
 
     val pagerState: PagerState = rememberPagerState(initialPage = 0)
-    var backgroundColor by remember { mutableStateOf(Color(0xff03a9f4)) }
-    var contentColor by remember { mutableStateOf(Color.White) }
-
-    val systemUiController = rememberSystemUiController()
+    var backgroundColor by remember { mutableStateOf(Color(0xffF44336)) }
+    val lightness = colorToHSL(backgroundColor)[2]
+    val contentColor = if (lightness < .6f) Color.White else Color.Black
 
     systemUiController.setStatusBarColor(
         color = backgroundColor
@@ -107,7 +109,5 @@ internal val tabList =
     listOf(
         "Material Design2",
         "Material You/3",
-        "Color Names",
-        "Gradient Angles",
-        "Color Conversions",
+        "Gradient Angles"
     )

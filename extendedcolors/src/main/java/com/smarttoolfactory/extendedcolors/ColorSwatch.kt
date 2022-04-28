@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 object ColorSwatch {
 
-    val HeaderColors by lazy {
+    val primaryHeaderColors by lazy {
         listOf(
             Color(0xffF44336),
             Color(0xffE91E63),
@@ -25,6 +25,27 @@ object ColorSwatch {
             Color(0xff795548),
             Color(0xff9E9E9E),
             Color(0xff607D8B)
+        )
+    }
+
+    val accentHeaderColors by lazy {
+        listOf(
+            Color(0xffF44336),
+            Color(0xffE91E63),
+            Color(0xff9C27B0),
+            Color(0xff673AB7),
+            Color(0xff3F51B5),
+            Color(0xff2196F3),
+            Color(0xff03A9F4),
+            Color(0xff00BCD4),
+            Color(0xff00ACC1),
+            Color(0xff4CAF50),
+            Color(0xff8BC34A),
+            Color(0xffCDDC39),
+            Color(0xffFFEB3B),
+            Color(0xffFFC107),
+            Color(0xffFF9800),
+            Color(0xffFF5722),
         )
     }
 

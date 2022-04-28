@@ -268,7 +268,8 @@ fun rgbToHex(
  */
 fun argbToColorInt(
     alpha: Int,
-    red: Int, green: Int,
+    red: Int,
+    green: Int,
     blue: Int
 ): Int {
     return android.graphics.Color.argb(alpha, red, green, blue)

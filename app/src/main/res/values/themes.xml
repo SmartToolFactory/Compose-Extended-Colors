@@ -2,6 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.ComposeColorsExtended" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor" tools:targetApi="l">@color/blue_stf</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/red500</item>
     </style>
 </resources>

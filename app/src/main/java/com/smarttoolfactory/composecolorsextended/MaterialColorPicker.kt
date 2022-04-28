@@ -8,7 +8,10 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -33,8 +36,8 @@ fun MaterialColorPicker(onColorChange: (Color) -> Unit) {
             verticalArrangement = Arrangement.spacedBy(8.dp),
             contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp)
         ) {
-            itemsIndexed(ColorSwatch.HeaderColors) { index: Int, item: Color ->
-                Header(
+            itemsIndexed(ColorSwatch.primaryHeaderColors) { index: Int, item: Color ->
+                ColorDisplay(
                     modifier = Modifier
                         .padding(horizontal = 2.dp)
                         .clip(CircleShape)
@@ -108,11 +111,40 @@ fun MaterialColorPicker(onColorChange: (Color) -> Unit) {
 }
 
 @Composable
-fun Header(modifier: Modifier, color: Color) {
+fun ColorDisplay(modifier: Modifier, color: Color) {
     Box(
         modifier = modifier
             .background(color)
     )
+}
+
+@Composable
+fun ColorDisplayWithTitle(
+    modifier: Modifier,
+    title: String,
+    selected: Boolean,
+    textColor: Color,
+    color: Color
+) {
+    Box(
+        contentAlignment = Alignment.Center
+    ) {
+        Box(
+            modifier = modifier
+                .background(color)
+        )
+
+        Text(text = title, color = textColor, fontSize = 16.sp)
+
+        if (selected) {
+            Icon(
+                imageVector = Icons.Default.Check,
+                contentDescription = "check",
+                modifier = modifier.background(textColor.copy(alpha = .5f)),
+                tint = Color.Green
+            )
+        }
+    }
 }
 
 @Composable
