@@ -14,7 +14,7 @@
 
 | M2 Color Swatches | M3 Tone Palettes | 
 | ----------|-----------|
-| <img src="./screenshots/material_design2.gif" width="400">| <img src="./screenshots/screenshots/material_design3.gif" width="400"> |
+| <img src="./screenshots/material_design2.gif" width="400">| <img src="./screenshots/material_design3.gif" width="400"> |
 
 ## Material Design 2 Colors && Swatches
 
