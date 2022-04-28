@@ -17,6 +17,7 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.smarttoolfactory.composecolorsextended.demo.GradientAngleDemo
 import com.smarttoolfactory.composecolorsextended.demo.MD2ColorSelectionDemo
 import com.smarttoolfactory.composecolorsextended.demo.MD3ColorShadeSelectionDemo
 import com.smarttoolfactory.composecolorsextended.ui.theme.ComposeColorsExtendedTheme
@@ -94,9 +95,10 @@ private fun HomeContent() {
             0 -> MD2ColorSelectionDemo {
                 backgroundColor = it
             }
-            else -> MD3ColorShadeSelectionDemo {
+            1 -> MD3ColorShadeSelectionDemo {
                 backgroundColor = it
             }
+            else -> GradientAngleDemo()
         }
     }
 }
