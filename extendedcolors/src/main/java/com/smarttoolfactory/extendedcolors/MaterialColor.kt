@@ -439,7 +439,7 @@ object MaterialColor {
     @Stable
     val Yellow300 = Color(0xffFFF176)
     @Stable
-    val Yellow400 = Color(0xffFFF176)
+    val Yellow400 = Color(0xffFFEE58)
     @Stable
     val Yellow500 = Color(0xffFFEB3B)
     @Stable

@@ -1,5 +1,6 @@
 package com.smarttoolfactory.extendedcolors
 
+import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color
 
 val A100 = "A100"
@@ -366,34 +367,35 @@ object ColorSwatch {
         )
     }
 
+
     val yellow by lazy {
         linkedMapOf(
-            50 to Color(0xffF9FBE7),
-            100 to Color(0xffF0F4C3),
-            200 to Color(0xffE6EE9C),
-            300 to Color(0xffDCE775),
+            50 to Color(0xffFFFDE7),
+            100 to Color(0xffFFF9C4),
+            200 to Color(0xffFFF59D),
+            300 to Color(0xffFFF176),
             400 to Color(0xffFFEE58),
             500 to Color(0xffFFEB3B),
-            600 to Color(0xffC0CA33),
-            700 to Color(0xffAFB42B),
-            800 to Color(0xff9E9D24),
-            900 to Color(0xff827717)
+            600 to Color(0xffFDD835),
+            700 to Color(0xffFBC02D),
+            800 to Color(0xffF9A825),
+            900 to Color(0xffF57F17)
         )
     }
 
     val yellowAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffF4FF81),
-            A200 to Color(0xffEEFF41),
-            A400 to Color(0xffC6FF00),
-            A700 to Color(0xffAEEA00)
+            A100 to Color(0xffFFFF8D),
+            A200 to Color(0xffFFFF00),
+            A400 to Color(0xffFFEA00),
+            A700 to Color(0xffFFD600)
         )
     }
 
     val amber by lazy {
         linkedMapOf(
             50 to Color(0xffFFF8E1),
-            100 to Color(0xffFFF8E1),
+            100 to Color(0xffFFECB3),
             200 to Color(0xffFFE082),
             300 to Color(0xffFFD54F),
             400 to Color(0xffFFCA28),
@@ -409,7 +411,7 @@ object ColorSwatch {
         linkedMapOf(
             A100 to Color(0xffFFE57F),
             A200 to Color(0xffFFD740),
-            A400 to Color(0xffFF8F00),
+            A400 to Color(0xffFFC400),
             A700 to Color(0xffFF6F00)
         )
     }
