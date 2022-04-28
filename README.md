@@ -107,7 +107,7 @@ A tonal palette consists of thirteen tones, including white and black. A tone va
 equivalent to the idea of light at its maximum and results in white. Every tone value between 0 and
 100 expresses the amount of light present in the color.
 
-<img src="./screenshots/m3_tones.png" width="320">
+<img src="./screenshots/m3_tones.png">
 
 From range 0 to 100
 
