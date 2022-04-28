@@ -12,9 +12,9 @@
 * Functions to convert between `androidx.compose.ui.graphics.Color`, HSL, HSV, `RGB`, HCT, and
   colors with nearest **Name** based on distance is in 3D space using `Red`, `Green`, `Blue`.
 
-| M2 Color Swatches | M3 Tone Palettes | 
-| ----------|-----------|
-| <img src="./screenshots/material_design2.gif" width="400">| <img src="./screenshots/material_design3.gif" width="400"> |
+| M2 Color Swatches | M3 Tone Palettes | Gradient Rotation|
+| ----------|-----------| -----------|
+| <img src="./screenshots/material_design2.gif" width="300">| <img src="./screenshots/material_design3.gif" width="300"> | <img src="./screenshots/gradient_rotation.gif" width="300"> |
 
 ## Material Design 2 Colors & Swatches
 
@@ -22,7 +22,7 @@
 
 <img src="./screenshots/m2_palette.png">
 
-[Material Colors](material_design2.gif material_design3.gif) can be accessed from Red to Brown.
+[Material Colors](https://materialui.co/colors/) can be accessed from Red to Brown.
 Brown, Grey, and BlueGrey swatches only have primary colors.
 
 ```kotlin
@@ -153,3 +153,62 @@ fun getColorTonesMap(color: Color): Map<Int, Color> {
 ```
 
 to get Map with tone keys
+
+## Gradient Rotation
+Gradients can be rotate by 45, in the future this can be expanded to any angle,
+with
+
+Create a `GradientOffset`with
+
+```kotlin
+var gradientOffset by remember {
+    mutableStateOf(GradientOffset(GradientAngle.CW0))
+}
+```
+
+```kotlin
+fun GradientOffset(angle: GradientAngle = GradientAngle.CW0): GradientOffset {
+    return when (angle) {
+        GradientAngle.CW45 -> GradientOffset(
+            start = Offset.Zero,
+            end = Offset.Infinite
+        )
+        GradientAngle.CW90 -> GradientOffset(
+            start = Offset.Zero,
+            end = Offset(0f, Float.POSITIVE_INFINITY)
+        )
+        GradientAngle.CW135 -> GradientOffset(
+            start = Offset(Float.POSITIVE_INFINITY, 0f),
+            end = Offset(0f, Float.POSITIVE_INFINITY)
+        )
+        GradientAngle.CW180 -> GradientOffset(
+            start = Offset(Float.POSITIVE_INFINITY, 0f),
+            end = Offset.Zero,
+        )
+        GradientAngle.CW225 -> GradientOffset(
+            start = Offset.Infinite,
+            end = Offset.Zero
+        )
+        GradientAngle.CW270 -> GradientOffset(
+            start = Offset(0f, Float.POSITIVE_INFINITY),
+            end = Offset.Zero
+        )
+        GradientAngle.CW315 -> GradientOffset(
+            start = Offset(0f, Float.POSITIVE_INFINITY),
+            end = Offset(Float.POSITIVE_INFINITY, 0f)
+        )
+        else -> GradientOffset(
+            start = Offset.Zero,
+            end = Offset(Float.POSITIVE_INFINITY, 0f)
+        )
+    }
+}
+```
+Set start and end of `Brush` with
+```kotlin
+val redGreenGradient = Brush.linearGradient(
+  colors = listOf(Color.Red, Color.Green, Color.Blue),
+  start = gradientOffset.start,
+  end = gradientOffset.end
+)
+```
