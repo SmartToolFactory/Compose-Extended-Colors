@@ -16,7 +16,7 @@
 | ----------|-----------|
 | <img src="./screenshots/material_design2.gif" width="400">| <img src="./screenshots/material_design3.gif" width="400"> |
 
-## Material Design 2 Colors && Swatches
+## Material Design 2 Colors & Swatches
 
 ### Material Colors
 
@@ -44,7 +44,7 @@ val RedA400 = Color(0xffFF1744)
 val RedA700 = Color(0xffD50000)
 ```
 
-For material Swatches
+### Material Swatches
 
 Call any swatch from `ColorSwatch` for instance for Red500 with `ColorSwatch.red` which will return
 primary color `Map<Int,Color>`
