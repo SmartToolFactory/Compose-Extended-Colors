@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.offset
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -16,8 +17,8 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.smarttoolfactory.composecolorsextended.demo.MaterialColorSelectionDemo
-import com.smarttoolfactory.composecolorsextended.demo.PrimaryColorSelectionDemo
+import com.smarttoolfactory.composecolorsextended.demo.MD2ColorSelectionDemo
+import com.smarttoolfactory.composecolorsextended.demo.MD3ColorShadeSelectionDemo
 import com.smarttoolfactory.composecolorsextended.ui.theme.ComposeColorsExtendedTheme
 import kotlinx.coroutines.launch
 
@@ -28,6 +29,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeColorsExtendedTheme {
+
+                Modifier.offset()
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -88,10 +91,10 @@ private fun HomeContent() {
     ) { page: Int ->
 
         when (page) {
-            0 -> PrimaryColorSelectionDemo {
+            0 -> MD2ColorSelectionDemo {
                 backgroundColor = it
             }
-            else -> MaterialColorSelectionDemo {
+            else -> MD3ColorShadeSelectionDemo {
                 backgroundColor = it
             }
         }
@@ -100,9 +103,8 @@ private fun HomeContent() {
 
 internal val tabList =
     listOf(
-        "MD2 Primary Colors",
-        "MD2 Material Colors",
-        "MD3 Shades",
+        "Material Design2",
+        "Material You/3",
         "Color Names",
         "Gradient Angles",
         "Color Conversions",

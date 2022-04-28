@@ -212,7 +212,7 @@ object MaterialColor {
     @Stable
     val BlueA200 = Color(0xff448AFF)
     @Stable
-    val BlueA400 = Color(0xff1565C0)
+    val BlueA400 = Color(0xff2979FF)
     @Stable
     val BlueA700 = Color(0xff2962FF)
 
@@ -313,13 +313,13 @@ object MaterialColor {
 
     // Accent Colors
     @Stable
-    val TealA100 = Color(0xff84FFFF)
+    val TealA100 = Color(0xffA7FFEB)
     @Stable
-    val TealA200 = Color(0xff18FFFF)
+    val TealA200 = Color(0xff64FFDA)
     @Stable
-    val TealA400 = Color(0xff00E5FF)
+    val TealA400 = Color(0xff1DE9B6)
     @Stable
-    val TealA700 = Color(0xff00B8D4)
+    val TealA700 = Color(0xff00BFA5)
 
     /*
         Green
@@ -387,9 +387,9 @@ object MaterialColor {
     @Stable
     val LightGreenA200 = Color(0xffB2FF59)
     @Stable
-    val LightGreenA400 = Color(0xff558B2F)
+    val LightGreenA400 = Color(0xff76FF03)
     @Stable
-    val LightGreenA700 = Color(0xff33691E)
+    val LightGreenA700 = Color(0xff64DD17)
 
     /*
         Lime

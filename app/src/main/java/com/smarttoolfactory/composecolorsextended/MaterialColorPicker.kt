@@ -48,13 +48,20 @@ fun MaterialColorPicker(onColorChange: (Color) -> Unit) {
 
         val colorSwatch: LinkedHashMap<Int, Color> = ColorSwatch.primaryColorSwatches[headerIndex]
 
-        val keys: List<Int> = colorSwatch.keys.toList()
-        val colors: List<Color> = colorSwatch.values.toList()
+        val keys: MutableList<Int> = colorSwatch.keys.toMutableList()
+        val colors: MutableList<Color> = colorSwatch.values.toMutableList()
 
-        val result: Result<List<Color>> =
-            runCatching { ColorSwatch.accentColorSwatches[headerIndex].values.toList() }
+        val result: Result<LinkedHashMap<Int, Color>> =
+            runCatching { ColorSwatch.accentColorSwatches[headerIndex] }
 
-
+        if (result.isSuccess) {
+            result.getOrNull()?.let { accentColorSwatch: LinkedHashMap<Int, Color> ->
+                val accentKeys = accentColorSwatch.keys.toList()
+                val accentColors = accentColorSwatch.values.toList()
+                keys.addAll(accentKeys)
+                colors.addAll(accentColors)
+            }
+        }
         Divider(
             modifier = Modifier
                 .fillMaxHeight()
@@ -68,23 +75,33 @@ fun MaterialColorPicker(onColorChange: (Color) -> Unit) {
             contentPadding = PaddingValues(horizontal = 10.dp, vertical = 8.dp)
         ) {
             itemsIndexed(colors) { index: Int, item: Color ->
-                ColorRowWithInfo(
-                    modifier =
-                    Modifier
-                        .graphicsLayer {
-                            scaleY = if (selectedColorIndex == index) 1.03f else 1f
-                            scaleX = if (selectedColorIndex == index) 1.03f else 1f
-                        }
-                        .shadow(2.dp, RoundedCornerShape(4.dp))
-                        .fillMaxWidth()
-                        .clickable {
-                            selectedColorIndex = index
-                            onColorChange(item)
-                        },
-                    title = keys[index].toString(),
-                    color = item,
-                    textColor = if (index < 5) Color.Black else Color.White
-                )
+                Column {
+                    if (index == 0 || index == 10) {
+                        Text(
+                            modifier = Modifier.padding(8.dp),
+                            text = if (index == 0) "Primary" else "Accent",
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    ColorRowWithInfo(
+                        modifier =
+                        Modifier
+                            .graphicsLayer {
+                                scaleY = if (selectedColorIndex == index) 1.03f else 1f
+                                scaleX = if (selectedColorIndex == index) 1.03f else 1f
+                            }
+                            .shadow(2.dp, RoundedCornerShape(4.dp))
+                            .fillMaxWidth()
+                            .clickable {
+                                selectedColorIndex = index
+                                onColorChange(item)
+                            },
+                        title = keys[index].toString(),
+                        color = item,
+                        textColor = if (index < 5 || index > 9) Color.Black else Color.White
+                    )
+                }
             }
         }
     }
@@ -116,7 +133,7 @@ fun ColorRowWithInfo(
         Text(
             text = colorToHex(color),
             color = textColor,
-            fontSize = 24.sp,
+            fontSize = 22.sp,
             fontWeight = FontWeight.Bold
         )
     }

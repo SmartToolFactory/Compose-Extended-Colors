@@ -5,7 +5,7 @@ import androidx.compose.ui.graphics.Color
 import com.smarttoolfactory.composecolorsextended.MaterialColorPicker
 
 @Composable
-fun PrimaryColorSelectionDemo(onColorChange: (Color) -> Unit) {
+fun MD3ColorShadeSelectionDemo(onColorChange: (Color) -> Unit) {
     MaterialColorPicker(onColorChange = onColorChange)
 }
 

@@ -1,12 +1,6 @@
 package com.smarttoolfactory.extendedcolors
 
-import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.Color
-
-val A100 = "A100"
-val A200 = "A200"
-val A400 = "A400"
-val A700 = "A700"
 
 object ColorSwatch {
 
@@ -97,10 +91,10 @@ object ColorSwatch {
 
     val redAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffFF8A80),
-            A200 to Color(0xffFF5252),
-            A400 to Color(0xffFF1744),
-            A700 to Color(0xffD50000)
+            100 to Color(0xffFF8A80),
+            200 to Color(0xffFF5252),
+            400 to Color(0xffFF1744),
+            700 to Color(0xffD50000)
         )
     }
 
@@ -121,10 +115,10 @@ object ColorSwatch {
 
     val pinkAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffFF80AB),
-            A200 to Color(0xffFF4081),
-            A400 to Color(0xffF50057),
-            A700 to Color(0xffC51162)
+            100 to Color(0xffFF80AB),
+            200 to Color(0xffFF4081),
+            400 to Color(0xffF50057),
+            700 to Color(0xffC51162)
         )
     }
 
@@ -145,10 +139,10 @@ object ColorSwatch {
 
     val purpleAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffEA80FC),
-            A200 to Color(0xffE040FB),
-            A400 to Color(0xffD500F9),
-            A700 to Color(0xffAA00FF)
+            100 to Color(0xffEA80FC),
+            200 to Color(0xffE040FB),
+            400 to Color(0xffD500F9),
+            700 to Color(0xffAA00FF)
         )
     }
 
@@ -169,10 +163,10 @@ object ColorSwatch {
 
     val deepPurpleAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffB388FF),
-            A200 to Color(0xff7C4DFF),
-            A400 to Color(0xff651FFF),
-            A700 to Color(0xff6200EA)
+            100 to Color(0xffB388FF),
+            200 to Color(0xff7C4DFF),
+            400 to Color(0xff651FFF),
+            700 to Color(0xff6200EA)
         )
     }
 
@@ -193,10 +187,10 @@ object ColorSwatch {
 
     val indigoAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xff8C9EFF),
-            A200 to Color(0xff536DFE),
-            A400 to Color(0xff3D5AFE),
-            A700 to Color(0xff304FFE)
+            100 to Color(0xff8C9EFF),
+            200 to Color(0xff536DFE),
+            400 to Color(0xff3D5AFE),
+            700 to Color(0xff304FFE)
         )
     }
 
@@ -217,10 +211,10 @@ object ColorSwatch {
 
     val blueAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xff82B1FF),
-            A200 to Color(0xff448AFF),
-            A400 to Color(0xff1565C0),
-            A700 to Color(0xff2962FF)
+            100 to Color(0xff82B1FF),
+            200 to Color(0xff448AFF),
+            400 to Color(0xff2979FF),
+            700 to Color(0xff2962FF)
         )
     }
     val lightBlue by lazy {
@@ -240,10 +234,10 @@ object ColorSwatch {
 
     val lightBlueAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xff80D8FF),
-            A200 to Color(0xff40C4FF),
-            A400 to Color(0xff00B0FF),
-            A700 to Color(0xff0091EA)
+            100 to Color(0xff80D8FF),
+            200 to Color(0xff40C4FF),
+            400 to Color(0xff00B0FF),
+            700 to Color(0xff0091EA)
         )
     }
 
@@ -264,10 +258,10 @@ object ColorSwatch {
 
     val cyanAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xff84FFFF),
-            A200 to Color(0xff18FFFF),
-            A400 to Color(0xff00E5FF),
-            A700 to Color(0xff00B8D4)
+            100 to Color(0xff84FFFF),
+            200 to Color(0xff18FFFF),
+            400 to Color(0xff00E5FF),
+            700 to Color(0xff00B8D4)
         )
     }
 
@@ -288,10 +282,10 @@ object ColorSwatch {
 
     val tealAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xff84FFFF),
-            A200 to Color(0xff18FFFF),
-            A400 to Color(0xff00E5FF),
-            A700 to Color(0xff00B8D4)
+            100 to Color(0xffA7FFEB),
+            200 to Color(0xff64FFDA),
+            400 to Color(0xff1DE9B6),
+            700 to Color(0xff00BFA5)
         )
     }
 
@@ -312,10 +306,10 @@ object ColorSwatch {
 
     val greenAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffB9F6CA),
-            A200 to Color(0xff69F0AE),
-            A400 to Color(0xff00E676),
-            A700 to Color(0xff00C853)
+            100 to Color(0xffB9F6CA),
+            200 to Color(0xff69F0AE),
+            400 to Color(0xff00E676),
+            700 to Color(0xff00C853)
         )
     }
 
@@ -336,10 +330,10 @@ object ColorSwatch {
 
     val lightGreenAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffCCFF90),
-            A200 to Color(0xffB2FF59),
-            A400 to Color(0xff558B2F),
-            A700 to Color(0xff33691E)
+            100 to Color(0xffCCFF90),
+            200 to Color(0xffB2FF59),
+            400 to Color(0xff76FF03),
+            700 to Color(0xff64DD17)
         )
     }
 
@@ -360,10 +354,10 @@ object ColorSwatch {
 
     val limeAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffF4FF81),
-            A200 to Color(0xffEEFF41),
-            A400 to Color(0xffC6FF00),
-            A700 to Color(0xffAEEA00)
+            100 to Color(0xffF4FF81),
+            200 to Color(0xffEEFF41),
+            400 to Color(0xffC6FF00),
+            700 to Color(0xffAEEA00)
         )
     }
 
@@ -385,10 +379,10 @@ object ColorSwatch {
 
     val yellowAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffFFFF8D),
-            A200 to Color(0xffFFFF00),
-            A400 to Color(0xffFFEA00),
-            A700 to Color(0xffFFD600)
+            100 to Color(0xffFFFF8D),
+            200 to Color(0xffFFFF00),
+            400 to Color(0xffFFEA00),
+            700 to Color(0xffFFD600)
         )
     }
 
@@ -409,10 +403,10 @@ object ColorSwatch {
 
     val amberAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffFFE57F),
-            A200 to Color(0xffFFD740),
-            A400 to Color(0xffFFC400),
-            A700 to Color(0xffFF6F00)
+            100 to Color(0xffFFE57F),
+            200 to Color(0xffFFD740),
+            400 to Color(0xffFFC400),
+            700 to Color(0xffFF6F00)
         )
     }
 
@@ -433,10 +427,10 @@ object ColorSwatch {
 
     val orangeAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffFFD180),
-            A200 to Color(0xffFFAB40),
-            A400 to Color(0xffFF9100),
-            A700 to Color(0xffFF6D00)
+            100 to Color(0xffFFD180),
+            200 to Color(0xffFFAB40),
+            400 to Color(0xffFF9100),
+            700 to Color(0xffFF6D00)
         )
     }
 
@@ -457,10 +451,10 @@ object ColorSwatch {
 
     val deepOrangeAccent by lazy {
         linkedMapOf(
-            A100 to Color(0xffFF9E80),
-            A200 to Color(0xffFF6E40),
-            A400 to Color(0xffFF3D00),
-            A700 to Color(0xffDD2C00)
+            100 to Color(0xffFF9E80),
+            200 to Color(0xffFF6E40),
+            400 to Color(0xffFF3D00),
+            700 to Color(0xffDD2C00)
         )
     }
 
