@@ -12,15 +12,15 @@
 * Functions to convert between `androidx.compose.ui.graphics.Color`, HSL, HSV, `RGB`, HCT, and
   colors with nearest **Name** based on distance is in 3D space using `Red`, `Green`, `Blue`.
 
-| M2 Color Swatches | M3 Tone Palettes | | ----------|-----------| -----------| -----------|
-| <img src="./screenshots/material_design2.gif" width="250">
-| <img src="./screenshots/colorpicker/material_design_3.gif" width="250"> |
+| M2 Color Swatches | M3 Tone Palettes | 
+| ----------|-----------|
+| <img src="./screenshots/material_design2.gif" width="400">| <img src="./screenshots/screenshots/material_design3.gif" width="400"> |
 
 ## Material Design 2 Colors && Swatches
 
 ### Material Colors
 
-<img src="https://i.stack.imgur.com/mteGN.png">
+<img src="./screenshots/m2_palette.png">
 
 [Material Colors](material_design2.gif material_design3.gif) can be accessed from Red to Brown.
 Brown, Grey, and BlueGrey swatches only have primary colors.
@@ -102,11 +102,15 @@ val primaryHeaderColors by lazy {
 ```
 
 ## Material Design 3 Tonal Palette
-A tonal palette consists of thirteen tones, including white and black. A tone value of 100 is equivalent to the idea of light at its maximum and results in white. Every tone value between 0 and 100 expresses the amount of light present in the color.
 
+A tonal palette consists of thirteen tones, including white and black. A tone value of 100 is
+equivalent to the idea of light at its maximum and results in white. Every tone value between 0 and
+100 expresses the amount of light present in the color.
 
-| <img src="./screenshots/m3_tones.png" width="250">
-From range 0 to 100 
+| <img src="./screenshots/m3_tones.png" width="320">
+
+From range 0 to 100
+
 ```kotlin
 val material3ToneRange = listOf(
     0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 99, 100
@@ -115,11 +119,13 @@ val material3ToneRange = listOf(
 ```
 
 Call
+
 ```kotlin
-fun getColorTonesList(color: Color): List< Color> {
+fun getColorTonesList(color: Color): List<Color> {
 
     val camColor = Cam16.fromInt(color.toArgb())
-    val palette: TonalPalette = TonalPalette.fromHueAndChroma(camColor.hue, max(48.0,camColor.chroma))
+    val palette: TonalPalette =
+        TonalPalette.fromHueAndChroma(camColor.hue, max(48.0, camColor.chroma))
     val toneList = mutableListOf<Color>()
 
     material3ToneRange.forEach { shade ->
@@ -129,6 +135,7 @@ fun getColorTonesList(color: Color): List< Color> {
     return toneList
 }
 ```
+
 that returns list of colors or
 
 ```kotlin
@@ -144,4 +151,5 @@ fun getColorTonesMap(color: Color): Map<Int, Color> {
 }
 
 ```
+
 to get Map with tone keys
