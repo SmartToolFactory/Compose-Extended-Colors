@@ -11,6 +11,9 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.ClipboardManager
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -21,7 +24,6 @@ import com.smarttoolfactory.composecolorsextended.demo.GradientAngleDemo
 import com.smarttoolfactory.composecolorsextended.demo.MD2ColorSelectionDemo
 import com.smarttoolfactory.composecolorsextended.demo.MD3ColorShadeSelectionDemo
 import com.smarttoolfactory.composecolorsextended.ui.theme.ComposeColorsExtendedTheme
-import com.smarttoolfactory.extendedcolors.ColorSwatch
 import com.smarttoolfactory.extendedcolors.util.colorToHSL
 import kotlinx.coroutines.launch
 

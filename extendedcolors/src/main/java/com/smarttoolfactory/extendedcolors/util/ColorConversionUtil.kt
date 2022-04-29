@@ -97,6 +97,20 @@ fun colorToARGBArray(color: Color): IntArray {
  * rgb[2] is Blue [0...255]
  * ```
  * @param color Jetpack Compose [Color]
+ * @return 3 element array which holds the input RGB components.
+ */
+fun colorToRGBArray(color: Color): IntArray {
+    return colorIntToRGBArray(color.toArgb())
+}
+
+/**
+ * Convert Jetpack [Color] into 3 element array of red, green, and blue
+ *```
+ * rgb[0] is Red [0 .. 255]
+ * rgb[1] is Green [0...255]
+ * rgb[2] is Blue [0...255]
+ * ```
+ * @param color Jetpack Compose [Color]
  * @param rgbIn 3 element array which holds the input RGB components.
  */
 fun colorToRGBArray(color: Color, rgbIn: IntArray) {
@@ -112,7 +126,7 @@ fun colorToHex(color: Color): String {
 }
 
 fun colorToHexAlpha(color: Color): String {
-   return argbToHex(color.alpha, color.red, color.green, color.blue)
+    return argbToHex(color.alpha, color.red, color.green, color.blue)
 }
 
 /**

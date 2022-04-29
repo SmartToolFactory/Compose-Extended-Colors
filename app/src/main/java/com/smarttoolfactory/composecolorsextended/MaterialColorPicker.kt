@@ -119,35 +119,6 @@ fun ColorDisplay(modifier: Modifier, color: Color) {
 }
 
 @Composable
-fun ColorDisplayWithTitle(
-    modifier: Modifier,
-    title: String,
-    selected: Boolean,
-    textColor: Color,
-    color: Color
-) {
-    Box(
-        contentAlignment = Alignment.Center
-    ) {
-        Box(
-            modifier = modifier
-                .background(color)
-        )
-
-        Text(text = title, color = textColor, fontSize = 16.sp)
-
-        if (selected) {
-            Icon(
-                imageVector = Icons.Default.Check,
-                contentDescription = "check",
-                modifier = modifier.background(textColor.copy(alpha = .5f)),
-                tint = Color.Green
-            )
-        }
-    }
-}
-
-@Composable
 fun ColorRowWithInfo(
     modifier: Modifier,
     title: String,
