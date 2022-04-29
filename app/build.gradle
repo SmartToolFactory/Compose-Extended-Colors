@@ -47,8 +47,9 @@ android {
 
 dependencies {
 
-    implementation project(':extendedcolors')
     implementation 'androidx.core:core-ktx:1.7.0'
+
+    implementation 'com.github.SmartToolFactory:Compose-Extended-Colors:1.0.0-alpha02'
 
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
