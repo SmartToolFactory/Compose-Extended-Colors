@@ -11,18 +11,16 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.ClipboardManager
-import androidx.compose.ui.platform.LocalClipboardManager
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.smarttoolfactory.composecolorsextended.demo.ColorModelConversionDemo
 import com.smarttoolfactory.composecolorsextended.demo.GradientAngleDemo
-import com.smarttoolfactory.composecolorsextended.demo.MD2ColorSelectionDemo
-import com.smarttoolfactory.composecolorsextended.demo.MD3ColorShadeSelectionDemo
+import com.smarttoolfactory.composecolorsextended.demo.M2ColorSelectionDemo
+import com.smarttoolfactory.composecolorsextended.demo.M3ColorShadeSelectionDemo
 import com.smarttoolfactory.composecolorsextended.ui.theme.ComposeColorsExtendedTheme
 import com.smarttoolfactory.extendedcolors.util.colorToHSL
 import kotlinx.coroutines.launch
@@ -96,13 +94,14 @@ private fun HomeContent() {
     ) { page: Int ->
 
         when (page) {
-            0 -> MD2ColorSelectionDemo {
+            0 -> M2ColorSelectionDemo {
                 backgroundColor = it
             }
-            1 -> MD3ColorShadeSelectionDemo {
+            1 -> M3ColorShadeSelectionDemo {
                 backgroundColor = it
             }
-            else -> GradientAngleDemo()
+            2 -> GradientAngleDemo()
+            else -> ColorModelConversionDemo()
         }
     }
 }
@@ -111,5 +110,6 @@ internal val tabList =
     listOf(
         "Material Design2",
         "Material You/3",
-        "Gradient Angles"
+        "Gradient Angles",
+        "Model Conversion",
     )

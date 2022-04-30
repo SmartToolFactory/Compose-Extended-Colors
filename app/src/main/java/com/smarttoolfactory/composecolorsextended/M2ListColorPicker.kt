@@ -26,7 +26,7 @@ import com.smarttoolfactory.extendedcolors.ColorSwatch
 import com.smarttoolfactory.extendedcolors.util.colorToHex
 
 @Composable
-fun MaterialColorPicker(onColorChange: (Color) -> Unit) {
+fun M2ListColorPicker(onColorChange: (Color) -> Unit) {
 
     var headerIndex by remember { mutableStateOf(0) }
     var selectedColorIndex by remember { mutableStateOf(-1) }
