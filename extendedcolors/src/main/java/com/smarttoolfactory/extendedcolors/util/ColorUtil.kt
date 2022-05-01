@@ -3,10 +3,11 @@ package com.smarttoolfactory.extendedcolors.util
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.graphics.ColorUtils
-import com.smarttoolfactory.extendedcolors.util.RGB.argbToHex
-import com.smarttoolfactory.extendedcolors.util.RGB.rgbToHSL
-import com.smarttoolfactory.extendedcolors.util.RGB.rgbToHSV
-import com.smarttoolfactory.extendedcolors.util.RGB.rgbToHex
+import com.smarttoolfactory.extendedcolors.util.RGBUtil.argbToHex
+import com.smarttoolfactory.extendedcolors.util.RGBUtil.rgbToHSL
+import com.smarttoolfactory.extendedcolors.util.RGBUtil.rgbToHSV
+import com.smarttoolfactory.extendedcolors.util.RGBUtil.rgbToHex
+
 
 object ColorUtil {
 
