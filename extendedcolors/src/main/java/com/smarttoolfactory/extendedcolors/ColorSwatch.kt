@@ -427,7 +427,7 @@ object ColorSwatch {
             100 to Color(0xffFFE57F),
             200 to Color(0xffFFD740),
             400 to Color(0xffFFC400),
-            700 to Color(0xffFF6F00)
+            700 to Color(0xffFFAB00)
         )
     }
 

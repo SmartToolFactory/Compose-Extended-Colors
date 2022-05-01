@@ -494,7 +494,7 @@ object MaterialColor {
     @Stable
     val AmberA400 = Color(0xffFFC400)
     @Stable
-    val AmberA700 = Color(0xffFF6F00)
+    val AmberA700 = Color(0xffFFAB00)
 
     /*
         Orange
