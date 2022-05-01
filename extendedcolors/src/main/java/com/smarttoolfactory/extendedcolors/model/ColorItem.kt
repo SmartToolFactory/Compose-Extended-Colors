@@ -9,19 +9,19 @@ import com.smarttoolfactory.extendedcolors.util.*
  */
 data class ColorItem(var color: Color) {
     val hexARGB
-        get() = colorToHexAlpha(color)
+        get() = ColorUtil.colorToHexAlpha(color)
 
     val hex
-        get() = colorToHex(color)
+        get() = ColorUtil.colorToHex(color)
 
     val hsvArray
-        get() = colorToHSV(color)
+        get() = ColorUtil.colorToHSV(color)
 
     val hslArray
-        get() = colorToHSL(color)
+        get() = ColorUtil.colorToHSL(color)
 
     val rgb
-        get() = colorToARGBArray(color)
+        get() = ColorUtil.colorToARGBArray(color)
 
     val alpha:Float
         get() = color.alpha

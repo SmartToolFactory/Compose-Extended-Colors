@@ -21,7 +21,7 @@ class ColorNameParser internal constructor() {
 
     private val rbgData: List<RGBData> by lazy {
         colorNameMap.map { entry: Map.Entry<String, String> ->
-            val rgbArray = hexToRGB(entry.key)
+            val rgbArray = HexUtil.hexToRGB(entry.key)
             val label = entry.value
             RGBData(
                 x = rgbArray[0],
@@ -36,7 +36,7 @@ class ColorNameParser internal constructor() {
      * Parse name of [Color]
      */
     fun parseColorName(color: Color): String {
-        val rgbArray = colorToRGBArray(color)
+        val rgbArray = ColorUtil.colorToRGBArray(color)
 
         val red: Int = rgbArray[0]
         val green: Int = rgbArray[1]
