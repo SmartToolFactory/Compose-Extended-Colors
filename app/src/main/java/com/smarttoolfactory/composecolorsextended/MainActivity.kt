@@ -22,7 +22,7 @@ import com.smarttoolfactory.composecolorsextended.demo.GradientAngleDemo
 import com.smarttoolfactory.composecolorsextended.demo.M2ColorSelectionDemo
 import com.smarttoolfactory.composecolorsextended.demo.M3ColorShadeSelectionDemo
 import com.smarttoolfactory.composecolorsextended.ui.theme.ComposeColorsExtendedTheme
-import com.smarttoolfactory.extendedcolors.util.colorToHSL
+import com.smarttoolfactory.extendedcolors.util.ColorUtil
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalPagerApi::class)
@@ -56,7 +56,7 @@ private fun HomeContent() {
 
     val pagerState: PagerState = rememberPagerState(initialPage = 0)
     var backgroundColor by remember { mutableStateOf(Color(0xffF44336)) }
-    val lightness = colorToHSL(backgroundColor)[2]
+    val lightness = ColorUtil.colorToHSL(backgroundColor)[2]
     val contentColor = if (lightness < .6f) Color.White else Color.Black
 
     systemUiController.setStatusBarColor(

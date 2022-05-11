@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.smarttoolfactory.extendedcolors.util.*
+import com.smarttoolfactory.extendedcolors.util.RGBUtil.toArgbString
 
 
 /**
@@ -166,27 +167,27 @@ private fun CheckColorConversionDetailsFromHSV(
 
     // Convert Color into ColorInt then to alpha, red, green, blue array
     val colorInt = color.toArgb()
-    val argbArrayFromColor: IntArray = colorIntToARGBArray(colorInt)
+    val argbArrayFromColor: IntArray = ColorUtil.colorIntToARGBArray(colorInt)
 
     // Convert to RGB from HSV
-    val rgbArray = hsvToRGB(hue = hue, saturation = saturation, value = value)
+    val rgbArray = HSVUtil.hsvToRGB(hue = hue, saturation = saturation, value = value)
 
     // Convert to HSL from HSV
-    val hslArrayFromHSV = hsvToHSL(hue, saturation, value)
+    val hslArrayFromHSV = HSVUtil.hsvToHSL(hue, saturation, value)
     val hueHslFromHSV = hslArrayFromHSV[0].toInt()
     val saturationHslFromHSV = hslArrayFromHSV[1].fractionToPercent()
     val lightnessHslFromHSV = hslArrayFromHSV[2].fractionToPercent()
 
     // Convert to HSL from Color's red, green, blue
     // 🔥 This conversion does not give correct result all the time
-    val hslArrayFromRGB = rgbToHSL(red, green, blue)
+    val hslArrayFromRGB = RGBUtil.rgbToHSL(red, green, blue)
     val hueHslFromRGB = hslArrayFromRGB[0].toInt()
     val saturationHslFromRGB = hslArrayFromRGB[1].fractionToPercent()
     val lightnessHslFromRGB = hslArrayFromRGB[2].fractionToPercent()
 
     // Convert to HSV from Color's red, green, blue
     // 🔥 This conversion does not give correct result all the time
-    val hsvArrayFromRGB = rgbToHSV(red, green, blue)
+    val hsvArrayFromRGB = RGBUtil.rgbToHSV(red, green, blue)
     val hueHsvFromRGB = hsvArrayFromRGB[0].toInt()
     val saturationHsvFromRGB = hsvArrayFromRGB[1].fractionToPercent()
     val valueHsvFromRGB = hsvArrayFromRGB[2].fractionToPercent()
@@ -302,27 +303,27 @@ private fun CheckColorConversionDetailsFromHSL(
 
     // Convert Color into ColorInt then to alpha, red, green, blue array
     val colorInt = color.toArgb()
-    val argbArrayFromColor: IntArray = colorIntToARGBArray(colorInt)
+    val argbArrayFromColor: IntArray = ColorUtil.colorIntToARGBArray(colorInt)
 
     // Convert to RGB from HSL
-    val rgbArray = hslToRGB(hue = hue, saturation = saturation, lightness = lightness)
+    val rgbArray = HSLUtil.hslToRGB(hue = hue, saturation = saturation, lightness = lightness)
 
     // Convert to HSV from HSL
-    val hsvArrayFromHSL = hslToHSV(hue, saturation, lightness)
+    val hsvArrayFromHSL = HSLUtil.hslToHSV(hue, saturation, lightness)
     val hueHsvFromHSL = hsvArrayFromHSL[0].toInt()
     val saturationHsvFromHSL = hsvArrayFromHSL[1].fractionToPercent()
     val valueHsvFromHSL = hsvArrayFromHSL[2].fractionToPercent()
 
     // Convert to HSV from Color's red, green, blue
     // 🔥 This conversion does not give correct result all the time
-    val hsvArrayFromRGB = rgbToHSV(red, green, blue)
+    val hsvArrayFromRGB = RGBUtil.rgbToHSV(red, green, blue)
     val hueHsvFromRGB = hsvArrayFromRGB[0].toInt()
     val saturationHsvFromRGB = hsvArrayFromRGB[1].fractionToPercent()
     val valueHsvFromRGB = hsvArrayFromRGB[2].fractionToPercent()
 
     // Convert to HSL from Color's red, green, blue
     // 🔥 This conversion does not give correct result all the time
-    val hslArrayFromRGB = rgbToHSL(red, green, blue)
+    val hslArrayFromRGB = RGBUtil.rgbToHSL(red, green, blue)
     val hueHslFromRGB = hslArrayFromRGB[0].toInt()
     val saturationHslFromRGB = hslArrayFromRGB[1].fractionToPercent()
     val lightnessHslFromRGB = hslArrayFromRGB[2].fractionToPercent()

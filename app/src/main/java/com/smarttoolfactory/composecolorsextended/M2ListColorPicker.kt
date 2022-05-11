@@ -8,10 +8,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,7 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.smarttoolfactory.extendedcolors.ColorSwatch
-import com.smarttoolfactory.extendedcolors.util.colorToHex
+import com.smarttoolfactory.extendedcolors.util.ColorUtil
 
 @Composable
 fun M2ListColorPicker(onColorChange: (Color) -> Unit) {
@@ -134,7 +131,7 @@ fun ColorRowWithInfo(
         Text(text = title, color = textColor, fontSize = 22.sp)
         Spacer(modifier = Modifier.weight(1f))
         Text(
-            text = colorToHex(color),
+            text = ColorUtil.colorToHex(color),
             color = textColor,
             fontSize = 22.sp,
             fontWeight = FontWeight.Bold

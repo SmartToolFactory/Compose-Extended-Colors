@@ -26,10 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.smarttoolfactory.extendedcolors.ColorSwatch
 import com.smarttoolfactory.extendedcolors.parser.rememberColorParser
-import com.smarttoolfactory.extendedcolors.util.colorToHSL
-import com.smarttoolfactory.extendedcolors.util.colorToHex
-import com.smarttoolfactory.extendedcolors.util.getColorTonesList
-import com.smarttoolfactory.extendedcolors.util.material3ToneRange
+import com.smarttoolfactory.extendedcolors.util.*
+import com.smarttoolfactory.extendedcolors.util.ColorUtil.colorToHex
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOn
@@ -212,7 +210,7 @@ fun M3ColorPicker(onColorChange: (Color) -> Unit) {
 
 
         Spacer(modifier = Modifier.height(30.dp))
-        val lightness = colorToHSL(currentColor)[2]
+        val lightness = ColorUtil.colorToHSL(currentColor)[2]
         val textColor = if (lightness < .6f) Color.White else Color.Black
 
 
@@ -236,7 +234,7 @@ fun M3ColorPicker(onColorChange: (Color) -> Unit) {
             verticalAlignment = Alignment.CenterVertically
         ) {
 
-            val hexText = colorToHex(color = currentColor)
+            val hexText = ColorUtil.colorToHex(color = currentColor)
             Text(
                 text = hexText,
                 fontSize = 24.sp,
