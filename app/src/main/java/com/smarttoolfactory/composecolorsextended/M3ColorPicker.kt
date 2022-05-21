@@ -1,5 +1,6 @@
 package com.smarttoolfactory.composecolorsextended
 
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -16,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.ClipboardManager
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -27,7 +29,6 @@ import androidx.compose.ui.unit.sp
 import com.smarttoolfactory.extendedcolors.ColorSwatch
 import com.smarttoolfactory.extendedcolors.parser.rememberColorParser
 import com.smarttoolfactory.extendedcolors.util.*
-import com.smarttoolfactory.extendedcolors.util.ColorUtil.colorToHex
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOn
@@ -37,8 +38,6 @@ import kotlinx.coroutines.flow.mapLatest
 @Composable
 fun M3ColorPicker(onColorChange: (Color) -> Unit) {
 
-    val clipboardManager = LocalClipboardManager.current
-    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -106,7 +105,7 @@ fun M3ColorPicker(onColorChange: (Color) -> Unit) {
             colorSelectionIndex.mainSelection = 0
             colorSelectionIndex.subSelection = 0
             colorSwatchIndex = 0
-                currentColor = ColorSwatch.primaryHeaderColors.first()
+            currentColor = ColorSwatch.primaryHeaderColors.first()
         }
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -210,9 +209,6 @@ fun M3ColorPicker(onColorChange: (Color) -> Unit) {
 
 
         Spacer(modifier = Modifier.height(30.dp))
-        val lightness = ColorUtil.colorToHSL(currentColor)[2]
-        val textColor = if (lightness < .6f) Color.White else Color.Black
-
 
         Text(
             text = colorName,
@@ -226,31 +222,44 @@ fun M3ColorPicker(onColorChange: (Color) -> Unit) {
         )
 
 
-        Row(
-            modifier = Modifier
-                .padding(8.dp)
-                .background(color = currentColor, RoundedCornerShape(50))
-                .padding(horizontal = 20.dp, vertical = 10.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
+        ColorDisplayWithClipboard(currentColor)
+    }
+}
 
-            val hexText = ColorUtil.colorToHex(color = currentColor)
-            Text(
-                text = hexText,
-                fontSize = 24.sp,
-                color = textColor
+@Composable
+private fun ColorDisplayWithClipboard(
+    currentColor: Color
+) {
+    val clipboardManager = LocalClipboardManager.current
+    val context = LocalContext.current
+
+    val lightness = ColorUtil.colorToHSL(currentColor)[2]
+    val textColor = if (lightness < .6f) Color.White else Color.Black
+
+    Row(
+        modifier = Modifier
+            .padding(8.dp)
+            .background(color = currentColor, RoundedCornerShape(50))
+            .padding(horizontal = 20.dp, vertical = 10.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+
+        val hexText = ColorUtil.colorToHex(color = currentColor)
+        Text(
+            text = hexText,
+            fontSize = 24.sp,
+            color = textColor
+        )
+        Spacer(modifier = Modifier.width(20.dp))
+        IconButton(onClick = {
+            Toast.makeText(context, "Copied $hexText", Toast.LENGTH_SHORT).show()
+            clipboardManager.setText(AnnotatedString(hexText))
+        }) {
+            Icon(
+                tint = textColor,
+                painter = painterResource(id = R.drawable.ic_baseline_content_copy_24),
+                contentDescription = "clipboard"
             )
-            Spacer(modifier = Modifier.width(20.dp))
-            IconButton(onClick = {
-                Toast.makeText(context, "Copied $hexText", Toast.LENGTH_SHORT).show()
-                clipboardManager.setText(AnnotatedString(hexText))
-            }) {
-                Icon(
-                    tint = textColor,
-                    painter = painterResource(id = R.drawable.ic_baseline_content_copy_24),
-                    contentDescription = "clipboard"
-                )
-            }
         }
     }
 }
