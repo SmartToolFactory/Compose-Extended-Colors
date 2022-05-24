@@ -50,7 +50,7 @@ dependencies {
 
 <img src="./screenshots/m2_palette.png">
 
-[Material Colors](https://materialui.co/colors/) can be accessed from Red to Brown. Brown, Grey, and
+[Material Colors](https://materialui.co/colors/) can be accessed from Red to BlueGrey. Brown, Grey, and
 BlueGrey swatches only have primary colors.
 
 ```kotlin
@@ -146,7 +146,7 @@ val material3ToneRange = listOf(
 
 ```
 
-Call
+Call that returns list of colors
 
 ```kotlin
 fun getColorTonesList(color: Color): List<Color> {
@@ -164,7 +164,7 @@ fun getColorTonesList(color: Color): List<Color> {
 }
 ```
 
-that returns list of colors or
+ or to get Map with tone keys
 
 ```kotlin
 fun getColorTonesMap(color: Color): Map<Int, Color> {
@@ -180,7 +180,6 @@ fun getColorTonesMap(color: Color): Map<Int, Color> {
 
 ```
 
-to get Map with tone keys
 
 ## Gradient Rotation
 
@@ -254,7 +253,7 @@ fun rememberColorParser(): ColorNameParser {
     }
 }
 ```
-And call `ColorParser.parseColor(color)`
+And call `ColorNameParser.parseColor(color)`
 
 Call it in a launchedEffect with snapshotFlow or in a ViewModel or UseCase
 
