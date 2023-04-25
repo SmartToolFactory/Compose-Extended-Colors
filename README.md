@@ -15,9 +15,9 @@
   colors with  **Name** based on distance to pre-defined elements in json in 3D space using `Red`
   , `Green`, `Blue` values of picked Color.
 
-| M2 Color Swatches | M3 Tone Palettes | Gradient Rotation|
-| ----------|-----------| -----------|
-| <img src="./screenshots/material_design2.gif" width="300">| <img src="./screenshots/material_design3.gif" width="300"> | <img src="./screenshots/gradient_rotation.gif" width="300"> |
+| M2 Color Swatches                                          | M3 Tone Palettes                                           | Gradient Rotation                                           |
+|------------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------|
+| <img src="./screenshots/material_design2.gif" width="300"> | <img src="./screenshots/material_design3.gif" width="300"> | <img src="./screenshots/gradient_rotation.gif" width="300"> |
 
 ## Gradle Setup
 
